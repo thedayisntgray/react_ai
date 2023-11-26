@@ -2,9 +2,6 @@
 
 require "dotenv/load"
 require "openai"
-require "yaml"
-require "wikipedia"
-require "byebug"
 require_relative "react_ai/version"
 
 module ReactAi
