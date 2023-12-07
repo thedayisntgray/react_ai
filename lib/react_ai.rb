@@ -73,7 +73,7 @@ module ReactAi
           next_prompt = "Observation: #{observation}"
 
         else
-          return
+          return # standard:disable Lint/NonLocalExitFromIterator
         end
       end
     end
