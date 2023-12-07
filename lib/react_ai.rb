@@ -2,6 +2,7 @@
 
 require "dotenv/load"
 require "openai"
+require_relative "react_ai/cli"
 require_relative "react_ai/version"
 
 module ReactAi
