@@ -1,8 +1,23 @@
 # ReactAi
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/react_ai`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to ```react_ai``` a gemified version of [my attempt to recreate the ReAct pattern in Ruby](https://github.com/thedayisntgray/Ruby-ReAct-Agent) with added features.
 
-TODO: Delete this and the text above, and describe your gem
+## Purpose
+
+The [ReAct pattern](https://arxiv.org/abs/2210.03629) is a technique used to circumvent the limitation LLMs have of only being able to respond past the date they were trained:
+
+<img width="676" alt="Screenshot 2024-01-08 at 11 14 31 PM" src="https://github.com/thedayisntgray/react_ai/assets/4859128/6940f5b3-e989-42f1-a1d8-4f1af13ab94a">
+
+We do this by prompting our LLM to use tools that we can define for it. Another advantage of using tools is that we can reduce hallucinations and therefore improve accuracy of LLM responses.
+
+## Features
+
+### Tools
+- Calculator
+- Wikipedia
+
+### CLI 
+- A simple CLI tool to test prompts
 
 ## Installation
 
@@ -14,16 +29,23 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
     $ gem install react_ai
 
+Create a ```.env``` file in the root directory and add your open-ai key and your're ready to go!🔥
+
+```
+OPEN_AI_KEY='your open ai key'
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+You can use this gem via the commmand line after it is installed by typing:
 
-## Development
+```./exe/react_ai "Some prompt for our LLM!"```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Here's an example of what a user prompt and subsequent response might look like:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+https://github.com/thedayisntgray/react_ai/assets/4859128/bbc6cba8-914b-4d6a-9a45-77e819acaec2
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/react_ai.
+Bug reports and pull requests are welcome on GitHub at https://github.com/thedayisntgray/react_ai.
