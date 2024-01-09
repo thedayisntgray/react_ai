@@ -21,7 +21,7 @@ module ReactAi
       e.g. calculate: 4 * 7 / 3
       Runs a calculation and returns the number - uses Ruby so be sure to use floating point syntax if necessary
 
-      wikipedia: (NOT IMPLEMENTED YET)
+      wikipedia:
       e.g. wikipedia: Ruby On Rails
       Returns a summary from searching Wikipedia
 
@@ -80,7 +80,17 @@ module ReactAi
     end
 
     def calculate(expr)
+      # consider integrating dentaku instead of using eval() which is unsafe
+      # https://github.com/rubysolo/dentaku
       eval(expr)
+    end
+
+    def wikipedia(query)
+      uri = URI("https://en.wikipedia.org/w/api.php")
+      params = {action: "query", list: "search", srsearch: query, format: "json"}
+      uri.query = URI.encode_www_form(params)
+      res = Net::HTTP.get_response(uri)
+      JSON.parse(res.body)["query"]["search"][0]["snippet"]
     end
 
     def execute(question)
