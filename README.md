@@ -6,6 +6,8 @@ Welcome to ```react_ai``` a gemified version of [my attempt to recreate the ReAc
 
 The [ReAct pattern](https://arxiv.org/abs/2210.03629) is a technique used to circumvent the limitation LLMs have of only being able to respond past the date they were trained. We do this by prompting our LLM to use tools that we can define for it. Another advantage of using tools is that we can reduce hallucinations and therefore improve accuracy of LLM responses.
 
+If you enjoy this gem you should check out [langchain.rb](https://github.com/andreibondarev/langchainrb) which has a more fully featured implementation of the ReAct pattern with more tools to play with!
+
 ## Features
 
 ### Tools
